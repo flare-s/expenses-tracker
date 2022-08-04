@@ -1,9 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --black: rgb(27, 27, 27);
+  --black-shade: rgba(0, 0, 0, 0.3);
+  --white: rgb(240, 239, 239);
   --primary-color: rgb(23, 167, 68);
 }
 
 body {
   min-height: 100vh;
   background-color: var(--black);
+  color: var(--white);
+}
+
+button {
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
 }
