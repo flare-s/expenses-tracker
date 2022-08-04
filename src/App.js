@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1>Expenses Tracker</h1>
-      </header>
-    </div>
+    <React.Fragment>
+      <Header />
+    </React.Fragment>
   );
 }
 
