@@ -1,0 +1,8 @@
+:root {
+  --black: rgb(27, 27, 27);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--black);
+}
