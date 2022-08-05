@@ -13,7 +13,6 @@ const Form = (props) => {
       date: date.current.value,
     };
     addExpense(newExp);
-    console.log(newExp);
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>

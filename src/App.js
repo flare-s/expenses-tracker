@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/ExpensesForm";
 import Container from "./components/UI/Container";
+import ExpensesList from "./components/ExpensesList/ExpensesList";
 function App() {
   const [expenses, setExpenses] = useState([]);
 
@@ -21,6 +22,7 @@ function App() {
       <Container>
         <Form addExpense={addExpense} />
       </Container>
+      {expenses.length > 0 && <ExpensesList expenses={expenses} />}
     </React.Fragment>
   );
 }
