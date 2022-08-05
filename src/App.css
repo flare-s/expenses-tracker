@@ -19,4 +19,5 @@ button {
   display: inline-block;
   color: inherit;
   cursor: pointer;
+  border: none;
 }
