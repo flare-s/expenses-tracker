@@ -13,6 +13,9 @@ const Form = (props) => {
       date: date.current.value,
     };
     addExpense(newExp);
+    name.current.value = "";
+    value.current.value = "";
+    date.current.value = "";
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
