@@ -10,6 +10,6 @@ A project that aims to track expenses.
 
 - [x] Show the expenses in a list.
 
-- [ ] Categorize the expenses by date.
+- [x] Filter the expenses by date.
 
 - [ ] Display the total value of the expenses.
