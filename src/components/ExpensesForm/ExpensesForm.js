@@ -36,7 +36,15 @@ const Form = (props) => {
       </div>
       <div className={styles["form-group"]}>
         <label htmlFor="exp-date">Expense date</label>
-        <input required type="date" id="exp-date" name="exp-date" ref={date} />
+        <input
+          required
+          type="date"
+          id="exp-date"
+          name="exp-date"
+          min="2019-01-01"
+          max={`${new Date().getFullYear()}-12-31`}
+          ref={date}
+        />
       </div>
       <div>
         <button className={styles["form-button"]} type="submit">
