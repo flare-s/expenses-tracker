@@ -9,9 +9,12 @@ import TotalExpenses from "./components/ExpensesChart/Total/TotalExpenses";
 function App() {
   const expensesState = [
     { name: "College tuition", value: 2500, date: "2022/05/18", id: 1 },
-    { name: "Home renovation", value: 8500, date: "2020/11/22", id: 2 },
-    { name: "New laptop", value: 4000, date: "2021/09/05", id: 3 },
-    { name: "Family vacation", value: 6300, date: "2019/07/01", id: 4 },
+    { name: "TV repair", value: 500, date: "2022/06/08", id: 2 },
+    { name: "New closet", value: 600, date: "2022/02/01", id: 3 },
+    { name: "Car repair", value: 2500, date: "2020/07/12", id: 4 },
+    { name: "Home renovation", value: 8500, date: "2020/11/22", id: 5 },
+    { name: "New laptop", value: 4000, date: "2021/09/05", id: 6 },
+    { name: "Family vacation", value: 6300, date: "2019/07/01", id: 7 },
   ];
 
   const [expenses, setExpenses] = useState(expensesState);
@@ -47,7 +50,7 @@ function App() {
         </Container>
         {filteredExp.length > 0 && (
           <>
-            <TotalExpenses total={total} />
+            <TotalExpenses total={total} expenses={filteredExp} />
             <ExpensesList expenses={filteredExp} year={year} />
           </>
         )}

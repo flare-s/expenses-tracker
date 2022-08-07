@@ -12,4 +12,6 @@ A project that aims to track expenses.
 
 - [x] Filter the expenses by date.
 
-- [ ] Display the total value of the expenses.
+- [x] Display the total value of the expenses.
+
+- [x] Show details about monthly expenses.

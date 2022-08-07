@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../UI/Container";
+import ExpensesDetails from "../ExpensesDetails";
 
 const TotalExpenses = (props) => {
   return (
@@ -20,6 +21,7 @@ const TotalExpenses = (props) => {
             ${props.total}
           </span>
         </p>
+        <ExpensesDetails expenses={props.expenses} total={props.total} />
       </Container>
     </section>
   );
