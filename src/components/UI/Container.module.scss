@@ -1,0 +1,23 @@
+@use "../../helpers" as *;
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include minBp($xsm) {
+    max-width: 540px;
+  }
+  @include minBp($sm) {
+    max-width: 720px;
+  }
+  @include minBp($med) {
+    max-width: 960px;
+  }
+  @include minBp($lg) {
+    max-width: 1140px;
+  }
+  @include minBp($xlg) {
+    max-width: 1320px;
+  }
+}

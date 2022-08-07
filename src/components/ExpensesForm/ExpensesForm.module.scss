@@ -1,0 +1,42 @@
+@use "../../helpers/" as *;
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+  gap: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--black-shade);
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+
+  & :last-child {
+    width: 100%;
+  }
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+
+    @include minBp($xsm) {
+      width: calc(50% - 15px);
+    }
+
+    & input {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+  }
+
+  &-button {
+    font-size: toRem(18);
+    min-width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+  }
+}

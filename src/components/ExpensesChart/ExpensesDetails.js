@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ExpensesDetails.module.css";
+import styles from "./ExpensesDetails.module.scss";
 const ExpensesDetails = (props) => {
   const data = [
     { month: "Jan", value: 0 },

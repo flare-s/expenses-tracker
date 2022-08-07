@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styles from "./ExpensesForm.module.css";
+import styles from "./ExpensesForm.module.scss";
 const Form = (props) => {
   const name = useRef();
   const value = useRef();

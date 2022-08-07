@@ -1,0 +1,37 @@
+@use "../../helpers/" as *;
+.expenses-list {
+  background-color: var(--black-shade);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+
+.expense {
+  &-item {
+    padding: 20px 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--primary-color);
+    }
+  }
+
+  &-date {
+    display: block;
+    padding: 5px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+
+  &-name,
+  &-value {
+    font-size: toRem(20);
+  }
+
+  &-name {
+    margin-right: auto;
+  }
+}

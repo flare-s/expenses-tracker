@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../UI/Container";
-import styles from "./ExpensesList.module.css";
+import styles from "./ExpensesList.module.scss";
 
 const ExpensesList = (props) => {
   const { expenses } = props;

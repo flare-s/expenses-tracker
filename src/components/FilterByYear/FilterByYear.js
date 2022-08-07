@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FilterByYear.module.css";
+import styles from "./FilterByYear.module.scss";
 const FilterByYear = (props) => {
   const { year, changeYear } = props;
   return (
