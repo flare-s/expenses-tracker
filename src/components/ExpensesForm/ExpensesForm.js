@@ -9,7 +9,7 @@ const Form = (props) => {
     e.preventDefault();
     const newExp = {
       name: name.current.value,
-      value: value.current.value,
+      value: +value.current.value,
       date: date.current.value,
     };
     addExpense(newExp);
