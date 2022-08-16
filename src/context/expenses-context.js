@@ -1,13 +1,6 @@
 import React, { createContext, useState } from "react";
 
-const ExpensesContext = createContext({
-  expenses: {},
-  filteredExp: {},
-  year: 0,
-  changeYear: (year) => {},
-  addExpense: (exp) => {},
-  total: 0,
-});
+const ExpensesContext = createContext(null);
 
 export const ExpensesProvider = (props) => {
   const expensesState = [
@@ -22,12 +15,6 @@ export const ExpensesProvider = (props) => {
 
   const [expenses, setExpenses] = useState(expensesState);
   const [year, setYear] = useState(2022);
-
-  const filteredExp = expenses.filter(
-    (exp) => new Date(exp.date).getFullYear() === +year
-  );
-
-  const total = filteredExp.reduce((a, b) => a + b.value, 0);
 
   const addExpense = (expense) => {
     setExpenses((prevExp) => [
@@ -46,10 +33,8 @@ export const ExpensesProvider = (props) => {
   return (
     <ExpensesContext.Provider
       value={{
-        expenses,
         year,
-        filteredExp,
-        total,
+        expenses,
         addExpense,
         changeYear,
       }}

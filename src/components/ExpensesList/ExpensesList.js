@@ -3,13 +3,12 @@ import Container from "../UI/Container";
 import styles from "./ExpensesList.module.scss";
 
 const ExpensesList = (props) => {
-  const { expenses } = props;
   return (
     <section>
       <Container>
         <h2>Current Expenses</h2>
         <ul className={styles["expenses-list"]}>
-          {expenses.map((exp) => (
+          {props.expenses.map((exp) => (
             <li key={exp.id} className={styles["expense-item"]}>
               <time dateTime={exp.date} className={styles["expense-date"]}>
                 {new Date(exp.date).toDateString()}

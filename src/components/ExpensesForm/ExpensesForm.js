@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import styles from "./ExpensesForm.module.scss";
-const Form = (props) => {
+import ExpensesContext from "../../context/expenses-context";
+const Form = () => {
   const name = useRef();
   const value = useRef();
   const date = useRef();
-  const { addExpense } = props;
+  const { addExpense } = useContext(ExpensesContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const newExp = {

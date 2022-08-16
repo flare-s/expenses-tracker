@@ -3,6 +3,7 @@ import Container from "../../UI/Container";
 import ExpensesDetails from "../ExpensesDetails";
 
 const TotalExpenses = (props) => {
+  const total = props.expenses.reduce((a, b) => a + b.value, 0);
   return (
     <section>
       <Container>
@@ -18,10 +19,10 @@ const TotalExpenses = (props) => {
               borderRadius: "5px",
             }}
           >
-            ${props.total}
+            ${total}
           </span>
         </p>
-        <ExpensesDetails expenses={props.expenses} total={props.total} />
+        <ExpensesDetails expenses={props.expenses} total={total} />
       </Container>
     </section>
   );

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import ExpensesContext from "../../context/expenses-context";
 import styles from "./FilterByYear.module.scss";
 const FilterByYear = (props) => {
-  const { year, changeYear } = props;
+  const { year, changeYear } = useContext(ExpensesContext);
   return (
     <div>
       <form className={styles.form}>
