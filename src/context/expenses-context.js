@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-const ExpensesContext = createContext(null);
+const ExpensesContext = createContext();
 
 export const ExpensesProvider = (props) => {
   const expensesState = [
@@ -16,12 +16,16 @@ export const ExpensesProvider = (props) => {
   const [expenses, setExpenses] = useState(expensesState);
   const [year, setYear] = useState(2022);
 
+  const filteredExp = expenses.filter(
+    (exp) => new Date(exp.date).getFullYear() === +year
+  );
+
   const addExpense = (expense) => {
     setExpenses((prevExp) => [
       ...prevExp,
       {
         ...expense,
-        id: expenses.length < 1 ? 1 : expenses[expenses.length - 1].id + 1,
+        id: prevExp.length < 1 ? 1 : prevExp[prevExp.length - 1].id + 1,
       },
     ]);
   };
@@ -34,9 +38,9 @@ export const ExpensesProvider = (props) => {
     <ExpensesContext.Provider
       value={{
         year,
-        expenses,
         addExpense,
         changeYear,
+        filteredExp,
       }}
     >
       {props.children}

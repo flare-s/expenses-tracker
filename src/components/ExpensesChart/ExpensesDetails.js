@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ExpensesDetails.module.scss";
+import ExpensesContext from "../../context/expenses-context";
 const ExpensesDetails = (props) => {
+  const { filteredExp } = useContext(ExpensesContext);
   const data = [
     { month: "Jan", value: 0 },
     { month: "Feb", value: 0 },
@@ -17,7 +19,7 @@ const ExpensesDetails = (props) => {
   ];
 
   // Add the value of each exp to the total value of the month that they occured on
-  props.expenses.forEach((exp) => {
+  filteredExp.forEach((exp) => {
     data[new Date(exp.date).getMonth()].value += exp.value;
   });
 

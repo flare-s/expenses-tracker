@@ -8,10 +8,7 @@ import FilterByYear from "./components/FilterByYear/FilterByYear";
 import TotalExpenses from "./components/ExpensesChart/Total/TotalExpenses";
 import ExpensesContext from "./context/expenses-context";
 function App() {
-  const { expenses, year } = useContext(ExpensesContext);
-  const filteredExp = expenses.filter(
-    (exp) => new Date(exp.date).getFullYear() === +year
-  );
+  const { filteredExp } = useContext(ExpensesContext);
 
   return (
     <React.Fragment>
@@ -23,8 +20,8 @@ function App() {
         </Container>
         {filteredExp.length > 0 && (
           <>
-            <TotalExpenses expenses={filteredExp} />
-            <ExpensesList expenses={filteredExp} />
+            <TotalExpenses />
+            <ExpensesList />
           </>
         )}
       </main>

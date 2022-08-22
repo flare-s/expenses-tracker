@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../../UI/Container";
 import ExpensesDetails from "../ExpensesDetails";
+import ExpensesContext from "../../../context/expenses-context";
 
-const TotalExpenses = (props) => {
-  const total = props.expenses.reduce((a, b) => a + b.value, 0);
+const TotalExpenses = () => {
+  const { filteredExp } = useContext(ExpensesContext);
+  const total = filteredExp.reduce((a, b) => a + b.value, 0);
   return (
     <section>
       <Container>
@@ -22,7 +24,7 @@ const TotalExpenses = (props) => {
             ${total}
           </span>
         </p>
-        <ExpensesDetails expenses={props.expenses} total={total} />
+        <ExpensesDetails total={total} />
       </Container>
     </section>
   );
